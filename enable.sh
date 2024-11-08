@@ -10,7 +10,7 @@ fi
 instance=$1
 
 # Enable the drive@ service
-sudo systemctl enable services/drive@$instance.service
+sudo systemctl enable drive@$instance.service
 
 # Enable the timer
-sudo systemctl enable --now timers/daily@$instance.timer
+sudo systemctl enable --now daily@$instance.timer
