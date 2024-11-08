@@ -14,4 +14,4 @@ Environment="HC_PING_KEY=$HC_PING_KEY"
 EOF
 
 # Enable the timer
-sudo systemctl enable services/drive-timer@.timer
+sudo systemctl enable timers/drive@.timer

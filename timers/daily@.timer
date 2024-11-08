@@ -1,0 +1,10 @@
+[Unit]
+Description=Run drive@%i every day
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+Unit=drive@%i.service
+
+[Install]
+WantedBy=timers.target
