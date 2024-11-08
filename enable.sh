@@ -14,4 +14,4 @@ instance=$2
 sudo systemctl enable $remote@$instance.service
 
 # Enable the timer
-sudo systemctl enable --now daily@$remote@$instance.timer
+sudo systemctl enable --now $remote@$instance.timer
