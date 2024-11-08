@@ -1,16 +1,17 @@
 #/usr/bin/env bash
 
-# Takes one argument, the name of the path
-if [ -z "$1" ]; then
-    echo "Usage: $0 <path>"
-    echo "Example: $0 exports (referring to /media/backups/exports)"
+# Takes two arguments, the name of the remote and the top backups path to the local directory
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <remote> <local>"
+    echo "Example: $0 drive exports"
     exit 1
 fi
 
-instance=$1
+remote=$1
+instance=$2
 
-# Enable the drive@ service
-sudo systemctl enable drive@$instance.service
+# Enable the service
+sudo systemctl enable $remote@$instance.service
 
 # Enable the timer
-sudo systemctl enable --now daily@$instance.timer
+sudo systemctl enable --now daily@$remote@$instance.timer
