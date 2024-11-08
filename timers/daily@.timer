@@ -1,10 +1,12 @@
+# Usage: systemctl enable daily@drive@exports.timer
+
 [Unit]
-Description=Run drive@%i every day
+Description=Run %I.service every day
 
 [Timer]
 OnCalendar=daily
 Persistent=true
-Unit=drive@%i.service
+Unit=%I.service
 
 [Install]
 WantedBy=timers.target
