@@ -1,0 +1,9 @@
+[Unit]
+Description=Backup /media/backup/%i to Google Drive
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=dan
+Group=dan
+ExecStart=-echo rclone -v sync --dry-run /media/backup/%i drive:backup/%i
