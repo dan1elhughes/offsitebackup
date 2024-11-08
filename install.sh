@@ -2,7 +2,7 @@
 
 # Enable the drive@ service
 
-systemctl enable services/drive@.service
+sudo systemctl enable services/drive@.service
 
 # Install the configuration file
 echo "Enter the HC_PING_KEY:"
@@ -14,4 +14,4 @@ Environment="HC_PING_KEY=$HC_PING_KEY"
 EOF
 
 # Enable the timer
-systemctl enable services/drive-timer@.timer
+sudo systemctl enable services/drive-timer@.timer
