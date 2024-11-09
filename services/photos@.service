@@ -1,0 +1,9 @@
+[Unit]
+Description=Backup /media/backup/%i to Google Photos
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=dan
+Group=dan
+ExecStart=/usr/local/bin/runitor -create -slug photos-%i rclone -v copy /media/backup/%i photos:album

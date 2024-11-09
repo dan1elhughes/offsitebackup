@@ -1,0 +1,10 @@
+[Unit]
+Description=Run photos@%i every day
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+Unit=photos@%i.service
+
+[Install]
+WantedBy=timers.target
