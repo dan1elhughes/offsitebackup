@@ -7,4 +7,4 @@ Type=oneshot
 User=dan
 Group=dan
 ExecStart=/usr/local/bin/runitor -create -slug syncoid-out-%i \
-    /usr/local/sbin/syncoid -r --no-sync-snap --recvoptions="-u" "vault/local/%i" "$SYNCOID_OFFSITE_IP:tank/offsite/vault/local/%i"
+    /usr/local/sbin/syncoid -r --no-sync-snap --recvoptions="-u" "vault/local/%i" "${SYNCOID_OFFSITE_IP}:tank/offsite/vault/local/%i"
