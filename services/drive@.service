@@ -6,5 +6,5 @@ Wants=network-online.target
 Type=oneshot
 User=dan
 Group=dan
-ExecStart=/usr/local/bin/runitor -create -slug %n \
+ExecStart=/usr/local/bin/runitor -create -slug %p-%i \
     rclone -v copy /media/backup/%i drive:backup/%i
