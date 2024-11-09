@@ -7,7 +7,7 @@ services=(drive photos syncoid-out)
 
 for service in "${services[@]}"; do
     # Install our templated services and timers
-    sudo systemctl enable services/$service@.service
+    sudo systemctl link services/$service@.service
     sudo ln -svf $(pwd)/timers/$service@.timer /etc/systemd/system/$service@.timer
 
     # Install the configuration file if it doesn't already exist
