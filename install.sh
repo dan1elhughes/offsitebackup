@@ -13,8 +13,9 @@ for remote in "${remotes[@]}"; do
     # Install the configuration file
     sudo mkdir -p /etc/systemd/system/$remote@.service.d
     sudo tee /etc/systemd/system/$remote@.service.d/override.conf <<EOF
-    [Service]
-    Environment="HC_PING_KEY=$HC_PING_KEY"
+[Service]
+Environment="HC_PING_KEY=$HC_PING_KEY"
 EOF
+
 done
 
