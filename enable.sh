@@ -1,17 +1,17 @@
 #/usr/bin/env bash
 
-# Takes two arguments, the name of the remote and the top backups path to the local directory
+# Takes two arguments, the name of the service and the instance
 if [ "$#" -ne 2 ]; then
-    echo "Usage: $0 <remote> <local>"
+    echo "Usage: $0 <service> <instance>"
     echo "Example: $0 drive exports"
     exit 1
 fi
 
-remote=$1
+service=$1
 instance=$2
 
 # Enable the service
-sudo systemctl enable $remote@$instance.service
+sudo systemctl enable $service@$instance.service
 
 # Enable the timer
-sudo systemctl enable --now $remote@$instance.timer
+sudo systemctl enable --now $service@$instance.timer

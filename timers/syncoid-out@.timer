@@ -1,0 +1,10 @@
+[Unit]
+Description=Run syncoid-out@%i every day
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+Unit=syncoid-out@%i.service
+
+[Install]
+WantedBy=timers.target
