@@ -12,13 +12,11 @@ for service in "${services[@]}"; do
 
     # Install the configuration file if it doesn't already exist
 
-    if [ ! -f /etc/systemd/system/$service@.service.d/override.conf ]; then
-        sudo mkdir -p /etc/systemd/system/$service@.service.d
-        sudo tee /etc/systemd/system/$service@.service.d/override.conf <<EOF
+    sudo mkdir -p /etc/systemd/system/$service@.service.d
+    sudo tee /etc/systemd/system/$service@.service.d/override.conf <<EOF
 [Service]
 Environment="HC_PING_KEY=$HC_PING_KEY"
 Environment="SYNCOID_OFFSITE_IP=100.72.123.112"
 EOF
-    fi
 
 done
