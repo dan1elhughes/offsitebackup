@@ -9,8 +9,8 @@ services=(drive photos syncoid-out)
 
 for service in "${services[@]}"; do
     # Copy our templated services and timers
-    cp -v services/$service@.service $dir
-    cp -v timers/$service@.timer $dir
+    sudo cp -v services/$service@.service $dir
+    sudo cp -v timers/$service@.timer $dir
 
     # Install the configuration file for the service
 
