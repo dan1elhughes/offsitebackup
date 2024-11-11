@@ -10,8 +10,8 @@ fi
 service=$1
 instance=$2
 
-# Enable the service
-sudo systemctl enable $service@$instance.service
+# Enable the timer to run at boot
+sudo systemctl enable $service@$instance.timer
 
-# Enable the timer
-sudo systemctl enable --now $service@$instance.timer
+# Start the timer for the current boot
+sudo systemctl start $service@$instance.timer

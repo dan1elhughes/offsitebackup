@@ -2,7 +2,7 @@
 
 # Takes two arguments, the name of the service and the instance name
 if [ "$#" -ne 2 ]; then
-    echo "Usage: $0 <service> <local>"
+    echo "Usage: $0 <service> <instance>"
     echo "Example: $0 drive exports"
     exit 1
 fi
